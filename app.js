@@ -1,4 +1,4 @@
-console.log("<------- Personal Budget -------->");
+// console.log("<------- Personal Budget -------->");
 
 /**
  * "Como usuario, quiero registrar el nombre, tipo(ingreso ó egreso) y monto 
@@ -10,31 +10,11 @@ Si los datos son válidos, se guarda la actividad.
  */
 
 // variable global que permita registrar las operaciones
-const transacciones = [];
+// 
+const form = document.querySelector("form");
 
-function registrarIngresoOEgreso() {
-  while (true) {
-    const transaccion = prompt("Ingrese la nueva transacción");
-    const tipoDeTransaccion = prompt(
-      "Escoja el tipo de transacción \n1) Ingreso\n2) Egreso\n\n Solo debe poner el número de la opción"
-    );
-    const monto = prompt("Ingrese el monto de la transacción");
+form.addEventListener("submit", function (event) {
 
-    transacciones.push({
-      transaccion,
-      tipoDeTransaccion,
-      monto,
-    });
-
-    const confirmacion = confirm("Desea agregar otra transacción?");
-    // ok => true: continuar con otra transaccion
-    // cancel => false: terminar la transaccion
-    // en que caso deberiamos detener el while
-    if (confirmacion === false) {
-      // detener el while
-      break;
-    }
-  }
-}
-
-registrarIngresoOEgreso();
+  event.preventDefault();
+  
+})
