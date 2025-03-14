@@ -1,0 +1,158 @@
+/* Animaciones para el Gestor de Presupuesto */
+
+/* Animación para el encabezado */
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  header {
+    animation: fadeInDown 0.6s ease-out;
+  }
+  
+  /* Animación para las tarjetas de resumen */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .bg-white {
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  /* Animación para las tarjetas individuales de resumen */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .grid-cols-1 > li:nth-child(1) {
+    animation: slideInRight 0.4s ease-out 0.1s both;
+  }
+  
+  .grid-cols-1 > li:nth-child(2) {
+    animation: slideInRight 0.4s ease-out 0.2s both;
+  }
+  
+  .grid-cols-1 > li:nth-child(3) {
+    animation: slideInRight 0.4s ease-out 0.3s both;
+  }
+  
+  /* Animación para botón de envío */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  button[type="submit"]:hover {
+    animation: pulse 1s infinite;
+  }
+  
+  /* Transiciones suaves para todos los botones */
+  button {
+    transition: all 0.3s ease;
+  }
+  
+  /* Animación para las filas de la tabla al añadir nuevos movimientos */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #lista-movimientos tr:not(.text-center) {
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  /* Animación para el hover en las filas de la tabla */
+  #lista-movimientos tr:not(.text-center):hover {
+    transition: background-color 0.3s ease;
+    background-color: rgba(237, 242, 247, 0.8);
+  }
+  
+  /* Efectos para los inputs al enfocarlos */
+  input:focus, select:focus {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  }
+  
+  /* Animación para destacar cambios en los totales */
+  @keyframes highlight {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+      color: #2c5282;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .highlight {
+    animation: highlight 0.7s ease-out;
+  }
+  
+  /* Animación para los mensajes de error */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    20%, 60% {
+      transform: translateX(-5px);
+    }
+    40%, 80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  .error {
+    animation: shake 0.5s ease-in-out;
+    border-color: #f56565 !important;
+  }
+  
+  /* Transición para el pie de página */
+  footer {
+    transition: all 0.3s ease;
+  }
+  
+  /* Animación para los radio buttons */
+  input[type="radio"] {
+    transition: all 0.2s ease;
+  }
+  
+  input[type="radio"]:checked + span {
+    transition: all 0.2s ease;
+    font-weight: 600;
+  }
